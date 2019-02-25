@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lee.dao.GoodsMapper">
+    <resultMap id="BaseResultMap" type="com.lee.model.Goods">
+        <id column="goodsCode" property="goodsCode" jdbcType="INTEGER"/>
+        <result column="goodsName" property="goodsName" jdbcType="VARCHAR"/>
+        <result column="goodsType" property="goodsType" jdbcType="VARCHAR"/>
+        <result column="goodsPrice" property="goodsPrice" jdbcType="VARCHAR"/>
+        <result column="goodsDescribe" property="goodsDescribe" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectGoodsByCode" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select  * from  goods_table where goodsCode = #{goodsCode}
+    </select>
+
+    <sql id="goods_base_column">
+      g.goodsCode,g.goodsName,g.goodsType,g.goodsPrice,g.goodsDescribe
+    </sql>
+
+    <sql id="base_query_where">
+        <trim prefix="WHERE" prefixOverrides="AND|OR">
+            <if test="goodsName != null and goodsName !=''">
+                and g.goodsName = #{goodsName}
+            </if>
+        </trim>
+    </sql>
+    <select id="getGoodsList" resultMap="BaseResultMap">
+        select
+        <include refid="goods_base_column"/>
+        from goods_table g
+        <include refid="base_query_where"/>
+    </select>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lee.iml" filepath="$PROJECT_DIR$/lee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lee-dao/lee-dao.iml" filepath="$PROJECT_DIR$/lee-dao/lee-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lee-model/lee-model.iml" filepath="$PROJECT_DIR$/lee-model/lee-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lee-parent/lee-parent.iml" filepath="$PROJECT_DIR$/lee-parent/lee-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lee-service/lee-service.iml" filepath="$PROJECT_DIR$/lee-service/lee-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lee-web/lee-web.iml" filepath="$PROJECT_DIR$/lee-web/lee-web.iml" />
+    </modules>
+  </component>
+</project>
